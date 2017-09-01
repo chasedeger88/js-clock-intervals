@@ -17,6 +17,6 @@ var minClock = setInterval(function(){
 },1000);
 
 var hourClock = setInterval(function(){
-  hourRotate+=.1;
+  hourRotate+=.01;
   elHour.style.transform = "rotate("+hourRotate+"deg)";
-},12000);
+},1000);
