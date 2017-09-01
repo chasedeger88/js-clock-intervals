@@ -1,20 +1,22 @@
-setInterval(function(){
-	var secondRotate = document.getElementById("second");
-	secondRotate.style.transform = "rotate(" + (6 * degrees) + "deg)";
-},60000);
+var hourRotate = 0;
+var minRotate = 0;
+var secondRotate = 0;
 
-setInterval(function(){
-	var minRotate = document.getElementById("min");
-	secondRotate.style.transform = "rotate(" + degrees + "deg)";
-},360000);
+var elSec = document.getElementById("second");
+var elmin = document.getElementById("minute");
+var elhour = document.getElementById("hour");
 
-setInterval(function(){
-	var hourRotate = document.getElementById("hour");
-	secondRotate.style.transform = "rotate(" + degrees + "deg)";
-},21600000000);
+var secClock = setInterval(function(){
+  secondRotate+=6;
+  elSec.style.transform = "rotate("+secondRotate+"deg)";
+},1000);
 
-secondRotation(0); // returns 0
-secondRotation(59); // returns (59 / 60) * 360
+var minClock = setInterval(function(){
+  minRotate+=.1;
+  elMin.style.transform = "rotate("+minRotate+"deg)";
+},1000);
 
-hourRotation(12); // returns 0
-hourRotation(5); // returns (5 / 12) * 360
+var hourClock = setInterval(function(){
+  hourRotate+=.1;
+  elHour.style.transform = "rotate("+hourRotate+"deg)";
+},12000);
